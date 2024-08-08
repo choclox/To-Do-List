@@ -22,11 +22,11 @@ class Gui(tk.Tk):
         self.showtask()
         
     def readTasks(self):
-        with open(R"clase udemy\GUI\tasklist.txt") as txt:
+        with open(R"to_do_list\tasklist.txt") as txt:
             self.tasks = txt.read().split()
         
     def saveTasks(self):
-        with open(R"clase udemy\GUI\tasklist.txt","w") as txt:
+        with open(R"to_do_list\tasklist.txt","w") as txt:
             for task in self.tasks:
                 txt.write(f"{task} ")
             
