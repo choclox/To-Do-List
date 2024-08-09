@@ -1,1 +1,1 @@
-ejercicio tareas dormir 
+Crear Gui, Crear metodos,

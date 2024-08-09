@@ -22,13 +22,14 @@ class Gui(tk.Tk):
         self.showtask()
         
     def readTasks(self):
-        with open(R"to_do_list\tasklist.txt") as txt:
-            self.tasks = txt.read().split()
+        with open(R"Finished\to_do_list\tasklist.txt") as txt:
+            self.tasks = txt.read().split(sep=",")
+            self.tasks.pop(-1)
         
     def saveTasks(self):
-        with open(R"to_do_list\tasklist.txt","w") as txt:
+        with open(R"Finished\to_do_list\tasklist.txt","w") as txt:
             for task in self.tasks:
-                txt.write(f"{task} ")
+                txt.write(f"{task},")
             
     def AddtaskFrame(self):
         # 1st FRAME Add task
@@ -145,10 +146,8 @@ class Gui(tk.Tk):
             self.saveTasks()
             self.showtask()
         
-   
         
-if __name__== "__main__":
-    toDo = Gui()
-    toDo.mainloop()
-    print(toDo.tasks)
+toDo = Gui()
+toDo.mainloop()
+
     
